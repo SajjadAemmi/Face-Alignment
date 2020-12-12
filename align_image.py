@@ -1,10 +1,9 @@
 import os
-
-from tqdm import tqdm
+import argparse
 
 from ffhq_dataset.face_alignment import image_align
 from ffhq_dataset.landmarks_detector import LandmarksDetector
-import argparse
+
 
 def main(RAW_IMAGES_DIR,ALIGNED_IMAGES_DIR,landmarks_model_path):
     """
@@ -21,19 +20,16 @@ def main(RAW_IMAGES_DIR,ALIGNED_IMAGES_DIR,landmarks_model_path):
             image_align(raw_img_path, aligned_face_path, face_landmarks)
             break
 
+
 if __name__ == "__main__":
-    """
-    Extracts and aligns all faces from images using DLib and a function from original FFHQ dataset preparation step
-    python align_images.py --src_dir /src_dir --out_dir /out_dir
-    """
 
     landmarks_model_path = 'models/shape_predictor_68_face_landmarks.dat'
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('--src_path',help='Source image path',type =str)
-    parser.add_argument('--out_path',help='Out path',type =str)
+    parser.add_argument('--input', help='input image path', default='input/source.jpg', type=str)
+    parser.add_argument('--output', help='output image path', default='output/source.jpg', type=str)
     args = parser.parse_args()
 
     landmarks_detector = LandmarksDetector(landmarks_model_path)
-    for i, face_landmarks in enumerate(landmarks_detector.get_landmarks(args.src_path), start=1):
-        image_align(args.src_path, args.out_path, face_landmarks)
+    for i, face_landmarks in enumerate(landmarks_detector.get_landmarks(args.input), start=1):
+        image_align(args.input, args.output, face_landmarks)

@@ -15,5 +15,5 @@ python3 align_images.py --src_dir /source_directory --out_dir /output_directory
 This code processes an image and output corresponding aligned image
 
 ```
-python3 align_images.py --src_dir /source_directory --out_dir /output_directory`
+python3 align_images.py --input /path/to/input-image --output /path/to/output-image`
 ```
