@@ -1,10 +1,12 @@
+import os
+
 import numpy as np
 import scipy.ndimage
-import os
 import PIL.Image
+import cv2
 
 
-def image_align(src_file, dst_file, face_landmarks, output_size=1024, transform_size=4096, enable_padding=True):
+def image_align(src_file, face_landmarks, output_size=1024, transform_size=4096, enable_padding=True):
         # Align function from FFHQ dataset pre-processing step
         # https://github.com/NVlabs/ffhq-dataset/blob/master/download_ffhq.py
 
@@ -80,5 +82,4 @@ def image_align(src_file, dst_file, face_landmarks, output_size=1024, transform_
         if output_size < transform_size:
             img = img.resize((output_size, output_size), PIL.Image.ANTIALIAS)
 
-        # Save aligned image.
-        img.save(dst_file, 'JPEG')
+        return cv2.cvtColor(np.array(img), cv2.COLOR_RGB2BGR)

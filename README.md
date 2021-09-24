@@ -1,19 +1,23 @@
 # Face Alignment
 
 
-#### Requirements
-Python3 with dlib,numpy,scipy and pillow.
+# Face Alignment
 
-### To run
+Face Alignment using python
 
-This code processes a directory of images (this directory should only contain images) 
-and outputs corresponding aligned images to another directory.
+
+## Installation
+
+Install required packages
 ```
-python3 align_images.py --src_dir /source_directory --out_dir /output_directory
+pip install -r requirements.txt
 ```
 
-This code processes an image and output corresponding aligned image
+
+## Inference
+
+This code processes an image and output to a directory
 
 ```
-python3 align_images.py --input /path/to/input-image --output /path/to/output-image`
+python3 align_image.py --input ./input/friends.jpg --output ./output
 ```
