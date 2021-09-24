@@ -1,8 +1,5 @@
 # Face Alignment
 
-
-# Face Alignment
-
 Face Alignment using python
 
 Input Image | Aligned Face | Aligned Face | Aligned Face  |
