@@ -14,8 +14,6 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     file_name, file_ext = os.path.splitext(os.path.basename(args.input))
-    
-
     landmarks_detector = LandmarksDetector(args.landmarks_model_path)
 
     try:
