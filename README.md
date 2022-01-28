@@ -21,10 +21,11 @@ pip install -r requirements.txt
 
 ## Inference
 
-This code processes an image and output to a directory:
+This code processes an image or a directory of images and save output to a directory:
 
 ```
 python3 align_image.py --input ./input/friends.jpg --output ./output
+python3 align_image.py --input ./input --output ./output
 ```
 
 or run following command to align face image using imutils package:
