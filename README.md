@@ -4,11 +4,11 @@ Face Alignment using python
 
 Input Image | Aligned Face | Aligned Face | Aligned Face  |
 --- | --- | --- | --- |
-![model arch](input/friends.jpg) | ![model arch](output/friends_0.jpg) | ![model arch](output/friends_2.jpg) | ![model arch](output/friends_1.jpg) |
+![model arch](assets/friends.jpg) | ![model arch](assets/friends_0.jpg) | ![model arch](assets/friends_2.jpg) | ![model arch](assets/friends_1.jpg) |
 
 Input Image | Aligned Face | Input Image | Aligned Face  |
 --- | --- | --- | --- |
-![model arch](input/trump.jpg) | ![model arch](output/trump_0.jpg) | ![model arch](input/scarlett-johansson.jpeg) | ![model arch](output/scarlett-johansson_0.jpg) |
+![model arch](assets/trump.jpg) | ![model arch](assets/trump_0.jpg) | ![model arch](assets/scarlett-johansson.jpeg) | ![model arch](assets/scarlett-johansson_0.jpg) |
 
 
 ## Installation

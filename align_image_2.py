@@ -9,9 +9,9 @@ import cv2
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("-p", "--shape-predictor", default="models/shape_predictor_68_face_landmarks.dat", help="path to facial landmark predictor")
     parser.add_argument("--input", required=True, help="path to input image")
     parser.add_argument('--output', help='output image path', default='output/', type=str)
+    parser.add_argument("-p", "--shape-predictor", default="models/shape_predictor_68_face_landmarks.dat", help="path to facial landmark predictor")
     args = parser.parse_args()
 
     file_name, file_ext = os.path.splitext(os.path.basename(args.input))
