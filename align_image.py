@@ -25,7 +25,6 @@ if __name__ == "__main__":
     parser.add_argument('--landmarks-model-path', help='landmarks model path', default='models/shape_predictor_68_face_landmarks.dat', type=str)
     args = parser.parse_args()
 
-    print("Alignment started")
     landmarks_detector = LandmarksDetector(args.landmarks_model_path)
 
     if os.path.isfile(args.input):  # single image
@@ -35,12 +34,9 @@ if __name__ == "__main__":
         for path, directories, files in os.walk(args.input):
             for directory in directories:
                 destination = os.path.join(args.output, directory)
-                if not os.path.exists(destination):
-                    os.makedirs(destination)
+                os.makedirs(destination, exist_ok=True)
             print(path)      
             for file in tqdm(files):
                 input_file_path = os.path.join(path, file)
-                output_dir_path = os.path.join(args.output, "/".join(path.strip("/").split('/')[1:]))
+                output_dir_path = os.path.join(args.output, os.path.relpath(path, args.input))
                 align_image(input_file_path, output_dir_path)
-    
-    print("Alignment finished")

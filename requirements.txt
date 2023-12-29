@@ -3,4 +3,4 @@ dlib
 numpy
 scipy
 pillow
-opencv-python==4.4.0.46
+opencv-python
